@@ -21,6 +21,9 @@ module.exports = {
             filename: './index.html'
         })
     ],
+    output: {
+        clean: true
+    },
     stats: {
         nestedModules: true,
         dependentModules: true,
