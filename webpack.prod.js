@@ -13,7 +13,7 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                exclude: '/node_modules/',
+                exclude: /node_modules/,
                 loader: 'babel-loader'
             },
             {
@@ -34,6 +34,11 @@ module.exports = {
         new MiniCssExtractPlugin({ filename: "[name].css" }),
         new WorkboxPlugin.GenerateSW()
     ],
+    output: {
+        clean: true,
+        libraryTarget: 'var',
+        library: 'Client'
+    },
     optimization: {
         minimizer: [
             new TerserPlugin(),
